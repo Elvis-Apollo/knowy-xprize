@@ -128,7 +128,7 @@ Intelligence object + agent execution log
 Next-action brief for the customer
 ```
 
-Deploy the Next.js application to **Google Cloud Run**. Use **Gemini through Vertex AI** for the required production LLM call. Store the small MVP dataset in the simplest production-compatible store available to the team; do not add infrastructure solely for appearance.
+Deploy the Next.js application on its existing hosting path and use **Gemini through Vertex AI** as the required Google Cloud production service. Store the small MVP dataset in the simplest production-compatible store available to the team; do not add infrastructure solely for appearance.
 
 ## Step 4 — Accelerate cycle time
 
@@ -147,7 +147,7 @@ Deploy the Next.js application to **Google Cloud Run**. Use **Gemini through Ver
 - Add a provider interface and Gemini/Vertex AI generator.
 - Keep the current structured intelligence contract.
 - Add an agent-execution log with timestamp, model, inputs used, decision, and outcome.
-- Deploy to Cloud Run.
+- Deploy the public application and verify the Vertex AI call in production.
 - Verify one complete production run.
 
 #### Phase 2 — Sell before expanding
@@ -255,5 +255,5 @@ If customers reject account briefs, reuse the same intelligence engine for the c
 2. Add Gemini through Vertex AI while preserving the existing output schema.
 3. Add an `agent_executions` record and visible run history.
 4. Narrow the UI to the client-account brief workflow.
-5. Deploy to Cloud Run.
+5. Deploy publicly and configure the Vertex AI production environment.
 6. Begin paid pilot outreach before adding another connector.

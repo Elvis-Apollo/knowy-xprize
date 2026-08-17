@@ -100,7 +100,7 @@ function parseGeminiResponse(data: unknown): Intelligence | null {
 }
 
 async function callGemini(question: string, match: TopicMatch): Promise<GenerationResult | null> {
-  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+  const model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
   const project = process.env.GOOGLE_CLOUD_PROJECT_ID;
   const location = process.env.GOOGLE_CLOUD_LOCATION || "us-central1";
   const accessToken = process.env.GOOGLE_CLOUD_ACCESS_TOKEN;

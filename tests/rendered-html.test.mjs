@@ -33,7 +33,7 @@ test("contains Gemini, reusable intelligence, freshness, and execution evidence"
   assert.match(store, /intelligence_dependencies/);
   assert.match(generator, /aiplatform\.googleapis\.com/);
   assert.match(generator, /generativelanguage\.googleapis\.com/);
-  assert.match(generator, /gemini-2\.5-flash/);
+  assert.match(generator, /gemini-3\.6-flash/);
   assert.match(generator, /responseSchema/);
   assert.match(generator, /deterministicIntelligence/);
   assert.match(generator, /RESOLVED supersedes older blocker reports/);

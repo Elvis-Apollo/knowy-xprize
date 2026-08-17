@@ -4,10 +4,10 @@ Deadline: August 17, 2026 at 1:00 p.m. PDT.
 
 ## Technical pass/fail
 
-- [ ] Public production URL works without local setup.
-- [x] Production execution verified with `gemini-api · gemini-3.6-flash` (execution ID 4).
-- [ ] Vertex AI is configured and visible in Google Cloud API usage records.
-- [ ] Account decision includes status, next action, and citations.
+- [x] Public production URL works without local setup.
+- [x] Production execution verified with `gemini-vertex · gemini-2.5-flash` (execution ID 5).
+- [x] Vertex AI is configured; preserve the matching Google Cloud API usage record.
+- [x] Account decision includes status, next action, and citations.
 - [ ] Reuse flow works.
 - [ ] Source-change and refresh flow works.
 - [ ] `/api/executions` returns production execution evidence.

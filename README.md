@@ -26,7 +26,7 @@ The production generator in `app/api/_lib/intelligence.ts` calls Gemini and requ
 - **Gemini on Vertex AI** using `GOOGLE_CLOUD_PROJECT_ID`, `GOOGLE_CLOUD_LOCATION`, and `GOOGLE_CLOUD_ACCESS_TOKEN`.
 - **Gemini Developer API** using `GEMINI_API_KEY` for fast local testing.
 
-The default model is `gemini-3.6-flash`. Vertex AI is the preferred submission configuration because it provides both the required Gemini call and direct use of a Google Cloud product.
+The Developer API fallback uses `gemini-3.6-flash`. The verified production path uses `gemini-2.5-flash` on Vertex AI, satisfying both the required Gemini call and direct use of a Google Cloud product.
 
 ### AI-native operation
 
@@ -96,7 +96,7 @@ For Gemini on Vertex AI:
 GOOGLE_CLOUD_PROJECT_ID=your-project
 GOOGLE_CLOUD_LOCATION=us-central1
 GOOGLE_CLOUD_ACCESS_TOKEN=your-short-lived-token
-GEMINI_MODEL=gemini-3.6-flash
+GEMINI_MODEL=gemini-2.5-flash
 ```
 
 Never commit `.env.local`, API keys, access tokens, customer data, or financial records.

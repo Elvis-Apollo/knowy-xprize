@@ -1,0 +1,8 @@
+import type { DemoSource, Finding } from "./store";
+type Intelligence = { answer: string; findings: Finding[]; confidence: number; status: string };
+export function deterministicIntelligence(sources: DemoSource[]): Intelligence {
+  const resolved = sources.some((source) => source.id === "github-184" && source.content.includes("RESOLVED"));
+  return resolved ? { answer: "Acme is no longer blocked. The security questionnaire is complete, approval has been granted, and the deployment may now proceed.", findings: [{ statement: "All security questionnaire items have been answered and security approval is complete.", sourceIds: ["github-184"] }, { statement: "The deployment plan requires security approval before production launch.", sourceIds: ["drive-plan"] }, { statement: "Engineering work was already complete, so the cleared review removes the final blocker.", sourceIds: ["drive-plan", "slack-acme"] }], confidence: .96, status: "ready" }
+    : { answer: "The Acme deployment is delayed because its security review is incomplete. Eight questionnaire items remain unanswered, and production access cannot be approved until they are resolved.", findings: [{ statement: "Eight security questionnaire items remain unanswered.", sourceIds: ["github-184"] }, { statement: "Security approval is required before production deployment.", sourceIds: ["drive-plan", "slack-acme"] }, { statement: "Engineering work is otherwise complete, making security the final blocker.", sourceIds: ["drive-plan"] }], confidence: .94, status: "blocked" };
+}
+export async function generateIntelligence(_question: string, sources: DemoSource[]) { return deterministicIntelligence(sources); }
